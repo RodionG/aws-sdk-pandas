@@ -4,11 +4,11 @@ import uuid
 import boto3
 import pytest
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 from ._utils import get_df_quicksight
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 client = boto3.client("quicksight")
 

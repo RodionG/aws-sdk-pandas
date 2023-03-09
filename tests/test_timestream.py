@@ -8,9 +8,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 @pytest.mark.parametrize("pagination", [None, {}, {"MaxItems": 3, "PageSize": 2}])

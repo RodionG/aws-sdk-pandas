@@ -3,9 +3,9 @@ import os
 
 import pytest
 
-from awswrangler._utils import ensure_cpu_count, get_even_chunks_sizes
+from h10_awswrangler._utils import ensure_cpu_count, get_even_chunks_sizes
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 @pytest.mark.parametrize(

@@ -10,7 +10,7 @@ import boto3
 import botocore.exceptions
 import pytest
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 from ._utils import create_workgroup, extract_cloudformation_outputs, get_time_str_with_random_suffix, path_generator
 
@@ -448,11 +448,11 @@ def local_filename() -> Iterator[str]:
 
 @pytest.fixture(scope="function", name="wr")
 def awswrangler_import() -> Iterator[ModuleType]:
-    import awswrangler
+    import h10_awswrangler
 
-    awswrangler.config.reset()
+    h10_awswrangler.config.reset()
 
-    yield reload(awswrangler)
+    yield reload(h10_awswrangler)
 
     # Reset for future tests
-    awswrangler.config.reset()
+    h10_awswrangler.config.reset()

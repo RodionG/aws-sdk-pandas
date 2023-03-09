@@ -4,11 +4,11 @@ import logging
 import pandas as pd
 import pytest
 
-import awswrangler as wr
-from awswrangler.exceptions import FailedQualityCheck
-from awswrangler.s3._merge_upsert_table import _is_data_quality_sufficient, merge_upsert_table
+import h10_awswrangler as wr
+from h10_awswrangler.exceptions import FailedQualityCheck
+from h10_awswrangler.s3._merge_upsert_table import _is_data_quality_sufficient, merge_upsert_table
 
-logger = logging.getLogger("awswrangler")
+logger = logging.getLogger("h10_awswrangler")
 logger.setLevel(logging.DEBUG)
 
 

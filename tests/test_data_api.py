@@ -2,7 +2,7 @@ import boto3
 import pandas as pd
 import pytest
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 from ._utils import get_time_str_with_random_suffix
 

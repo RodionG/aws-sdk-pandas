@@ -4,11 +4,11 @@ import time
 
 import pandas as pd
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 from ._utils import ensure_data_types, ensure_data_types_csv, get_df, get_df_csv
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 def test_lakeformation(path, path2, glue_database, glue_table, glue_table2, use_threads=False):

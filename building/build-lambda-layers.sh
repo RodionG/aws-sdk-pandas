@@ -20,7 +20,7 @@ if [ "${ARCH}" != "aarch64" ]; then # https://docs.aws.amazon.com/lambda/latest/
     --volume "$DIR_NAME":/aws-sdk-pandas/ \
     --workdir /aws-sdk-pandas/building/lambda \
     --rm \
-    awswrangler-build-py37 \
+    h10_awswrangler-build-py37 \
     build-lambda-layer.sh "${VERSION}-py3.7" "ninja-build"
 fi
 
@@ -29,7 +29,7 @@ docker run \
   --volume "$DIR_NAME":/aws-sdk-pandas/ \
   --workdir /aws-sdk-pandas/building/lambda \
   --rm \
-  awswrangler-build-py38 \
+  h10_awswrangler-build-py38 \
   build-lambda-layer.sh "${VERSION}-py3.8${ARCH_SUFFIX}" "ninja-build"
 
 # Python 3.9
@@ -37,5 +37,5 @@ docker run \
   --volume "$DIR_NAME":/aws-sdk-pandas/ \
   --workdir /aws-sdk-pandas/building/lambda \
   --rm \
-  awswrangler-build-py39 \
+  h10_awswrangler-build-py39 \
   build-lambda-layer.sh "${VERSION}-py3.9${ARCH_SUFFIX}" "ninja-build"

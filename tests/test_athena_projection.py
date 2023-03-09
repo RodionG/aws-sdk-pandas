@@ -2,11 +2,11 @@ import logging
 
 import pandas as pd
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 from ._utils import dt, ts
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 def test_to_parquet_projection_integer(glue_database, glue_table, path):

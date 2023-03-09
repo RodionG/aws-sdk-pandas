@@ -33,16 +33,16 @@ jobs:
           poetry config virtualenvs.create false --local
           poetry install --extras "sqlserver deltalake" -vvv
       - name: mypy check
-        run: mypy --install-types --non-interactive awswrangler
+        run: mypy --install-types --non-interactive h10_awswrangler
       - name: Flake8 Lint
         run: flake8 .
       - name: Pylint Lint
-        run: pylint -j 0 awswrangler
+        run: pylint -j 0 h10_awswrangler
       - name: Black style
         run: black --check .
       - name: Imports order check (isort)
         run: isort --check .
       - name: Documentation Lint
-        run: pydocstyle awswrangler/ --convention=numpy
+        run: pydocstyle h10_awswrangler/ --convention=numpy
       - name: Documentation check
         run: doc8 --ignore D005,D002 --max-line-length 120 docs/source

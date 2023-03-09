@@ -10,11 +10,11 @@ import pandas as pd
 import pytest
 import pytz
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 API_CALL = botocore.client.BaseClient._make_api_call
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 def test_list_buckets() -> None:
@@ -77,7 +77,7 @@ def test_delete_objects_multiple_chunks(bucket: str, path: str, use_threads: boo
     for file_path in file_paths:
         wr.s3.to_csv(df, file_path)
 
-    with patch("awswrangler._utils.chunkify") as chunkify_function:
+    with patch("h10_awswrangler._utils.chunkify") as chunkify_function:
         chunkify_function.return_value = [[p] for p in file_paths]
         wr.s3.delete_objects(path=file_paths, use_threads=use_threads)
 

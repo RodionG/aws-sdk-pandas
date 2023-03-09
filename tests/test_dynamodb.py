@@ -7,7 +7,7 @@ import pytest
 from boto3.dynamodb.conditions import Attr, Key
 from botocore.exceptions import ClientError
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 
 @pytest.mark.parametrize(

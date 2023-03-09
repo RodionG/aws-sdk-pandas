@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 from ._utils import (
     ensure_athena_ctas_table,
@@ -23,7 +23,7 @@ from ._utils import (
     get_time_str_with_random_suffix,
 )
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 def test_athena_ctas(path, path2, path3, glue_table, glue_table2, glue_database, glue_ctas_database, kms_key):
@@ -1270,7 +1270,7 @@ def test_read_sql_query_ctas_write_compression(path, glue_database, glue_table, 
     )
 
     with patch(
-        "awswrangler.athena._read.create_ctas_table", wraps=wr.athena.create_ctas_table
+        "h10_awswrangler.athena._read.create_ctas_table", wraps=wr.athena.create_ctas_table
     ) as mock_create_ctas_table:
         wr.athena.read_sql_query(
             sql=f"SELECT * FROM {glue_table}",

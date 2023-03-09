@@ -17,9 +17,9 @@ import sphinx_bootstrap_theme
 
 # Append local Sphinx extensions
 sys.path.append(os.path.abspath("./_ext"))
-# Insert awswrangler"s path into the system.
+# Insert h10_awswrangler"s path into the system.
 sys.path.insert(0, os.path.abspath("../.."))
-import awswrangler
+import h10_awswrangler
 
 # -- Project information -----------------------------------------------------
 
@@ -29,8 +29,8 @@ author = "Amazon Web Services"
 master_doc = "index"
 
 # The full version, including alpha/beta/rc tags
-release = awswrangler.__version__
-version = awswrangler.__version__
+release = h10_awswrangler.__version__
+version = h10_awswrangler.__version__
 
 # -- General configuration ---------------------------------------------------
 

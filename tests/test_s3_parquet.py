@@ -9,11 +9,11 @@ import pandas as pd
 import pyarrow as pa
 import pytest
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 from ._utils import ensure_data_types, get_df_list
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 @pytest.mark.parametrize("partition_cols", [None, ["c2"], ["c1", "c2"]])

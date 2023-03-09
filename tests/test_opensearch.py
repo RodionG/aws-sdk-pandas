@@ -11,12 +11,12 @@ import opensearchpy
 import pandas as pd
 import pytest  # type: ignore
 
-import awswrangler as wr
-from awswrangler.opensearch._utils import _is_serverless
+import h10_awswrangler as wr
+from h10_awswrangler.opensearch._utils import _is_serverless
 
 from ._utils import extract_cloudformation_outputs
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 inspections_documents = [

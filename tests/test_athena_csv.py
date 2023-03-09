@@ -7,11 +7,11 @@ import pandas as pd
 import pyarrow as pa
 import pytest
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 from ._utils import ensure_data_types_csv, get_df_csv
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 @pytest.mark.parametrize("use_threads", [True, False])

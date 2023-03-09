@@ -8,11 +8,11 @@ import pyarrow as pa
 import pytest
 from pg8000.dbapi import ProgrammingError
 
-import awswrangler as wr
+import h10_awswrangler as wr
 
 from ._utils import ensure_data_types, get_df
 
-logging.getLogger("awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
 
 
 @pytest.fixture(scope="function")
