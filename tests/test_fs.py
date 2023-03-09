@@ -4,12 +4,12 @@ import boto3
 import pytest
 import s3fs
 
-import h10_awswrangler as wr
-from h10_awswrangler.s3._fs import open_s3_object
+import h10awswrnglr as wr
+from h10awswrnglr.s3._fs import open_s3_object
 
 from ._utils import ensure_data_types, get_df_list
 
-logger = logging.getLogger("h10_awswrangler")
+logger = logging.getLogger("h10awswrnglr")
 logger.setLevel(logging.DEBUG)
 
 

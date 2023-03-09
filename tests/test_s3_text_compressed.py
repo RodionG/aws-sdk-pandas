@@ -9,13 +9,13 @@ import boto3
 import pandas as pd
 import pytest
 
-import h10_awswrangler as wr
+import h10awswrnglr as wr
 
 from ._utils import get_df_csv
 
 EXT = {"gzip": ".gz", "bz2": ".bz2", "xz": ".xz", "zip": ".zip"}
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 @pytest.mark.parametrize("compression", ["gzip", "bz2", "xz"])

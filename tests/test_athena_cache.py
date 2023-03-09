@@ -6,7 +6,7 @@ import pytest
 
 from ._utils import ensure_athena_query_metadata
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 def test_athena_cache(wr, path, glue_database, glue_table, workgroup1):
@@ -47,7 +47,7 @@ def test_cache_query_ctas_approach_true(wr, path, glue_database, glue_table, dat
     )
 
     with patch(
-        "h10_awswrangler.athena._read._check_for_cached_results",
+        "h10awswrnglr.athena._read._check_for_cached_results",
         return_value=wr.athena._read._CacheInfo(has_valid_cache=False),
     ) as mocked_cache_attempt:
         df2 = wr.athena.read_sql_table(
@@ -57,7 +57,7 @@ def test_cache_query_ctas_approach_true(wr, path, glue_database, glue_table, dat
         assert df.shape == df2.shape
         assert df.c0.sum() == df2.c0.sum()
 
-    with patch("h10_awswrangler.athena._read._resolve_query_without_cache") as resolve_no_cache:
+    with patch("h10awswrnglr.athena._read._resolve_query_without_cache") as resolve_no_cache:
         df3 = wr.athena.read_sql_table(
             glue_table, glue_database, ctas_approach=True, max_cache_seconds=900, data_source=data_source
         )
@@ -83,7 +83,7 @@ def test_cache_query_ctas_approach_false(wr, path, glue_database, glue_table, da
     )
 
     with patch(
-        "h10_awswrangler.athena._read._check_for_cached_results",
+        "h10awswrnglr.athena._read._check_for_cached_results",
         return_value=wr.athena._read._CacheInfo(has_valid_cache=False),
     ) as mocked_cache_attempt:
         df2 = wr.athena.read_sql_table(
@@ -93,7 +93,7 @@ def test_cache_query_ctas_approach_false(wr, path, glue_database, glue_table, da
         assert df.shape == df2.shape
         assert df.c0.sum() == df2.c0.sum()
 
-    with patch("h10_awswrangler.athena._read._resolve_query_without_cache") as resolve_no_cache:
+    with patch("h10awswrnglr.athena._read._resolve_query_without_cache") as resolve_no_cache:
         df3 = wr.athena.read_sql_table(
             glue_table, glue_database, ctas_approach=False, max_cache_seconds=900, data_source=data_source
         )
@@ -108,7 +108,7 @@ def test_cache_query_semicolon(wr, path, glue_database, glue_table):
     wr.s3.to_parquet(df=df, path=path, dataset=True, mode="overwrite", database=glue_database, table=glue_table)
 
     with patch(
-        "h10_awswrangler.athena._read._check_for_cached_results",
+        "h10awswrnglr.athena._read._check_for_cached_results",
         return_value=wr.athena._read._CacheInfo(has_valid_cache=False),
     ) as mocked_cache_attempt:
         df2 = wr.athena.read_sql_query(
@@ -118,7 +118,7 @@ def test_cache_query_semicolon(wr, path, glue_database, glue_table):
         assert df.shape == df2.shape
         assert df.c0.sum() == df2.c0.sum()
 
-    with patch("h10_awswrangler.athena._read._resolve_query_without_cache") as resolve_no_cache:
+    with patch("h10awswrnglr.athena._read._resolve_query_without_cache") as resolve_no_cache:
         df3 = wr.athena.read_sql_query(
             f"SELECT * FROM {glue_table};", database=glue_database, ctas_approach=True, max_cache_seconds=900
         )
@@ -134,7 +134,7 @@ def test_local_cache(wr, path, glue_database, glue_table):
     wr.s3.to_parquet(df=df, path=path, dataset=True, mode="overwrite", database=glue_database, table=glue_table)
 
     with patch(
-        "h10_awswrangler.athena._read._check_for_cached_results",
+        "h10awswrnglr.athena._read._check_for_cached_results",
         return_value=wr.athena._read._CacheInfo(has_valid_cache=False),
     ) as mocked_cache_attempt:
         df2 = wr.athena.read_sql_query(
@@ -186,7 +186,7 @@ def test_cache_start_query(wr, path, glue_database, glue_table, data_source):
     )
 
     with patch(
-        "h10_awswrangler.athena._utils._check_for_cached_results",
+        "h10awswrnglr.athena._utils._check_for_cached_results",
         return_value=wr.athena._read._CacheInfo(has_valid_cache=False),
     ) as mocked_cache_attempt:
         query_id = wr.athena.start_query_execution(sql=f"SELECT * FROM {glue_table}", database=glue_database)
@@ -195,7 +195,7 @@ def test_cache_start_query(wr, path, glue_database, glue_table, data_source):
     # Wait for query to finish in order to successfully check cache
     wr.athena.wait_query(query_execution_id=query_id)
 
-    with patch("h10_awswrangler.athena._utils._start_query_execution") as internal_start_query:
+    with patch("h10awswrnglr.athena._utils._start_query_execution") as internal_start_query:
         query_id_2 = wr.athena.start_query_execution(
             sql=f"SELECT * FROM {glue_table}", database=glue_database, max_cache_seconds=900
         )

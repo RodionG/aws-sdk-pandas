@@ -8,8 +8,8 @@ import boto3
 import botocore.exceptions
 import pandas as pd
 
-import h10_awswrangler as wr
-from h10_awswrangler._utils import try_it
+import h10awswrnglr as wr
+from h10awswrnglr._utils import try_it
 
 ts = lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S.%f")  # noqa
 dt = lambda x: datetime.strptime(x, "%Y-%m-%d").date()  # noqa

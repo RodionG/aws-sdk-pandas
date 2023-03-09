@@ -3,9 +3,9 @@ import time
 
 import pytest
 
-import h10_awswrangler as wr
+import h10awswrnglr as wr
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 def test_cluster(bucket, cloudformation_outputs, emr_security_configuration):

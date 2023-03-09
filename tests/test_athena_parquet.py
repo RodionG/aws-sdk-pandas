@@ -9,12 +9,12 @@ import pandas as pd
 import pyarrow as pa
 import pytest
 
-import h10_awswrangler as wr
-from h10_awswrangler._data_types import _split_fields
+import h10awswrnglr as wr
+from h10awswrnglr._data_types import _split_fields
 
 from ._utils import ensure_data_types, get_df, get_df_cast, get_df_list
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 def test_parquet_catalog(path, path2, glue_table, glue_table2, glue_database):

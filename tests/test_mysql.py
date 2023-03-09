@@ -7,11 +7,11 @@ import pymysql
 import pytest
 from pymysql.cursors import SSCursor
 
-import h10_awswrangler as wr
+import h10awswrnglr as wr
 
 from ._utils import ensure_data_types, get_df
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 @pytest.fixture(scope="function")

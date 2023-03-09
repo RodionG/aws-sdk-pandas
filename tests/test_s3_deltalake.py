@@ -3,7 +3,7 @@ import pandas as pd
 import pytest
 from deltalake import DeltaTable, write_deltalake
 
-import h10_awswrangler as wr
+import h10awswrnglr as wr
 
 
 def _get_storage_options():

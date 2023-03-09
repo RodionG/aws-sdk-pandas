@@ -9,11 +9,11 @@ import pandas as pd
 import pytest  # type: ignore
 from gremlin_python.process.traversal import Direction, T
 
-import h10_awswrangler as wr
+import h10awswrnglr as wr
 
 from ._utils import extract_cloudformation_outputs
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 @pytest.fixture(scope="session")

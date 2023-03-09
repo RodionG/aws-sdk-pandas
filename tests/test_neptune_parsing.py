@@ -5,9 +5,9 @@ import pytest  # type: ignore
 from gremlin_python.process.traversal import T
 from gremlin_python.structure.graph import Edge, Path, Property, Vertex, VertexProperty
 
-import h10_awswrangler as wr
+import h10awswrnglr as wr
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 @pytest.fixture(scope="session")

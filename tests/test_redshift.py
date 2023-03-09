@@ -13,12 +13,12 @@ import pytest
 import redshift_connector
 from redshift_connector.error import ProgrammingError
 
-import h10_awswrangler as wr
-from h10_awswrangler import _utils
+import h10awswrnglr as wr
+from h10awswrnglr import _utils
 
 from ._utils import dt, ensure_data_types, ensure_data_types_category, get_df, get_df_category, ts
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 @pytest.fixture(scope="function")

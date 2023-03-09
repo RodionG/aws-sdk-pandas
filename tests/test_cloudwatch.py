@@ -4,10 +4,10 @@ from datetime import datetime
 import boto3
 import pytest
 
-import h10_awswrangler as wr
-from h10_awswrangler import exceptions
+import h10awswrnglr as wr
+from h10awswrnglr import exceptions
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 def test_query_cancelled(loggroup):

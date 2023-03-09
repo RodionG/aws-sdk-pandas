@@ -4,9 +4,9 @@ import sys
 import pandas as pd
 import pytest
 
-import h10_awswrangler as wr
+import h10awswrnglr as wr
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 @pytest.mark.parametrize("use_threads", [True, False, 2])

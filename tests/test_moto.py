@@ -10,12 +10,12 @@ import pandas as pd
 import pytest
 from botocore.exceptions import ClientError
 
-import h10_awswrangler as wr
-from h10_awswrangler.exceptions import EmptyDataFrame, InvalidArgumentCombination, InvalidArgumentValue
+import h10awswrnglr as wr
+from h10awswrnglr.exceptions import EmptyDataFrame, InvalidArgumentCombination, InvalidArgumentValue
 
 from ._utils import ensure_data_types, get_df_csv, get_df_list
 
-logging.getLogger("h10_awswrangler").setLevel(logging.DEBUG)
+logging.getLogger("h10awswrnglr").setLevel(logging.DEBUG)
 
 
 @pytest.fixture(scope="module")

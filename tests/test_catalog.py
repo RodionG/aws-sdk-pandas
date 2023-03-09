@@ -7,11 +7,11 @@ import boto3
 import pandas as pd
 import pytest
 
-import h10_awswrangler as wr
+import h10awswrnglr as wr
 
 from ._utils import ensure_data_types_csv, get_df_csv
 
-logger = logging.getLogger("h10_awswrangler")
+logger = logging.getLogger("h10awswrnglr")
 logger.setLevel(logging.DEBUG)
 
 
